@@ -1,24 +1,30 @@
+@import "/styles/popup.css";
+@import "/styles/burger.css";
+
 body {
     width: 100%;
     font-family: "Manrope", sans-serif;
     letter-spacing: -0.03em;
     background-color: #F5F5F5;
+    overflow-x: hidden;
 }
 
-h2 {
-    font-weight: 200;
+body h2 {
     font-size: 18px;
-    letter-spacing: -0.03em;
     text-transform: uppercase;
 
     margin-bottom: 30px;
 }
 
-/* header */
-.header {
+.container {
     width: 1150px;
     margin: 0 auto;
-    margin-top: 32px;
+    overflow-x: hidden;
+}
+
+/* header */
+.header {
+    padding-top: 33px;
 
     font-weight: 400;
     font-size: 18px;
@@ -26,6 +32,7 @@ h2 {
 
     display: flex;
     justify-content:space-between;
+    align-items: center;
 }
 
 .header-list{
@@ -33,6 +40,10 @@ h2 {
 
     display: flex;
     justify-content: space-between;
+}
+
+.header-list-link {
+    display: block;
 }
 
 .header-list-link a{
@@ -51,26 +62,35 @@ h2 {
     text-underline-offset: 8px;
 }
 
+.header img {
+    width: 100%;
+}
+
 /*intro*/
 .intro {
-    width: 1150px;
-    margin: 0 auto;
     margin-top: 70px;
 }
 
 .intro h1 {
     margin-bottom: 30px;
-    
+    width: 990px;
+
     font-weight: 400;
     font-size: 60px;
     line-height: 100%;
 }
 
 .intro-wrapper {
-    width: 1150px;
+    width: 100%;
     height: 500px;
-    background-image: url("img/intro img.png");
+
+    background: linear-gradient(to bottom, transparent, rgb(27, 27, 27)),
+    url("img/intro img.png");
+    /* background-image: url("img/intro img.png"); */
     background-repeat: no-repeat;
+    /* background-position: center bottom; */
+    background-position: 50%;
+    background-size: cover;
 
     display: grid;
     align-items: end;
@@ -89,15 +109,12 @@ h2 {
 
 /*about us*/
 .aboutus {
-    width: 1150px;
-    margin: 0 auto;
     margin-top: 150px;
 }
 
 .aboutus p {
-    width: 1051px;
-
     margin-bottom: 30px;
+    width: 1048px;
 
     font-weight: 200;
     font-size: 45px;
@@ -130,8 +147,6 @@ h2 {
 
 /*projects*/
 .projects {
-    width: 1150px;
-    margin: 0 auto;
     margin-top: 150px;
 }
 
@@ -141,6 +156,14 @@ h2 {
 
 .project-img {
     margin-bottom: 15px;
+    height: 450px;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    object-position: center;
 }
 
 .project-descr {
@@ -156,16 +179,17 @@ h2 {
     justify-content: space-between;
     font-weight: 400;
     font-size: 20px;
+    line-height: 27px;
     color: #AD1818;
 }
 
 .project-link:hover {
     width: 135px;
-
 }
 
 .allprojects {
-    width: 1150px;
+    display: block;
+    width: 100%;
     height: 153px;
 
     border: 1px solid #AD1818;
@@ -185,84 +209,258 @@ h2 {
     background-color: black;
     background-size: 100%;
 
-    color:#FFF;
-}
-.services div{
-    width: 1150px;
-    margin: 0 auto;
     margin-top: 150px;
     padding: 150px 0;
+
+    color:#FFF;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    column-gap: 10px;
+    row-gap: 80px;
 }
 
 .service {
-    margin-bottom: 60px;
+    position: relative;
+    width: calc(50% - 5px);
 }
 
-.service:last-child {
-    margin-bottom: 0;
+.service-cost {
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    font-size: 22px;
+
+    background-color: #AD1818;
+    padding: 2px 20px;
+    border-radius: 5px;
 }
 
-.service-decr {
-    font-weight: 200;
+.service img {
+    width: 100%;
+    height: 388px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.service-descr {
+    font-weight: 400;
     font-size: 30px;
-
-    margin-top: 15px;
 }
 
-/*extra example*/
-.extra-example {
+.services-btn {
+    width: 100%;
+    height: 153px;
+    border-radius: 5px;
+
+    background-color: #AD1818;
+
+    margin-top: 100px;
+    
+    font-size: 30px;
+    line-height: 41px;
+}
+
+.services-btn:hover {
+    background-color: #F5F5F5;
+
+    border: 1px solid #AD1818 ;
+    color: #AD1818;
+}
+
+
+/* feedback */
+.feedback {
+    margin: 120px 0;
+}
+
+body h3 {
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 61.47px;
+
+    margin-bottom: 10px;
+}
+
+.one__feedback {
+    max-width: 860px;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.feedback-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feedback-column {
+    width: calc(50% - 45px);
+    margin-bottom: 100px;
+}
+
+/* Gallery */
+
+.gallery {
+    margin: 150px 0;
+    color: #F5F5F5;
+}
+
+.gallery__wrapper {
+    position: relative;
+}
+
+.gallery__title_wrapper {
+    position: absolute;
+    z-index: 2;
+    top: 50px;
+    width: 100%;
+}
+
+.gallery__wrapper h2 {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.gallery__slides {
     height: 717px;
-    background-image: url("img/extra example.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-
-    display: grid;
-    align-items: end;
+    position: relative;
 }
 
-.extra-example-wrapper {
-    width: 1150px;
-    margin: 0 auto;
+.gallery__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
 }
 
-.extra-example p {
+.gallery__slide_active {
+    opacity: 1
+}
+
+.box {
+    height: 100%;
+}
+
+.box p {
     width: 443px;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 30px;
+    position: absolute;
+    top: 560px;
+}
 
-    color: #FFF;
+.box_1 {
+    background-image: 
+    linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 5%,
+        rgba(0, 0, 0, 0.4) 83%
+    ),
+    url("img/1 gallery photo.png");
 
-    margin-bottom: 60px;
+    background-position: center 70%;
+    background-size: cover; 
+}
+
+.box_2 {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0.52%,
+        rgba(0, 0, 0, 0.4) 82.81%
+    ),
+    url("img/2 gallery photo.png");
+
+    background-position: center 70%;
+    background-size: cover; 
+}
+
+.box_3 {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0.52%,
+        rgba(0, 0, 0, 0.4) 82.81%
+    ),
+    url("img/3 gallery photo.png");
+
+    background-position: center 70%;
+    background-size: cover; 
+}
+
+.box_4 {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0.52%,
+        rgba(0, 0, 0, 0.4) 82.81%
+    ),
+    url("img/4 gallery photo.png");
+
+    background-position: center 70%;
+    background-size: cover; 
+}
+
+.gallery__controls_wrapper {
+    position: absolute;
+    top: 470px;
+    width: 100%;
+}
+
+.gallery__controls button {
+    color: #F5F5F5;
+    font-size: 70px; 
+    font-weight: 200;
+    margin-right: 10px;
+}
+
+.gallery__controls button:hover {
+    opacity: 0.5;
 }
 
 /*contacts*/
 .contacts {
-    width: 1150px;
-    margin: 150px auto;
+    margin: 150px 0;
 }
 
-.phone {
-    margin-bottom: 13px;
+.contact-wrapper {
+    position: relative;
+    margin-top: 44px;
 }
 
-.tele {
+.icon-box {
+    position: absolute;
+    top: -44px;
+    width: 20px;
+    height: 22px;
+}
+
+address {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 100px;
+}
+
+.tele, .email {
     font-weight: 400;
     font-size: 60px;
+    line-height: 60px;
 
     color:black;
-    margin-bottom: 15px;
 }
 
-.mail {
-    font-weight: 400;
-    font-size: 60px; 
-
-    color: black;
-
-}
-
-.mail:hover {
+.email:hover {
     opacity: 0.5;
     text-decoration: underline 1px;
     text-underline-offset: 10px;
@@ -275,7 +473,6 @@ footer {
 }
 
 .footer {
-    width: 1150px;
     padding: 20px 0 30px 0;
     margin: 0 auto;
     color: #FFF;
@@ -285,6 +482,8 @@ footer {
 .footer-list {
     width: 450px;
     margin: 60px auto;
+
+    font-size: 18px;
 
     display: flex;
     justify-content: space-between;
@@ -305,5 +504,312 @@ footer {
 
 .footer p {
     margin-top: 100px;
-    opacity: 0.8;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+
+/* ДЛЯ ПЛАНШЕТОВ */
+
+@media (max-width: 1149px) {
+    .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-list{
+        display: none;
+    }
+
+    .intro-wrapper {
+        height: 400px;
+    }
+
+    .intro h1 {
+        width: 768px;
+    
+        font-size: 46px;
+        line-height: 60px;
+    }
+
+    .aboutus p {
+        width: 690px;
+
+        font-size: 35px;
+    }
+    
+    .project-descr {
+        font-size: 25px;
+    }
+
+    .service-cost {
+         font-size: 20px;
+    }
+    
+    .service img {
+        height: 315px;
+    }
+
+    .service-descr {
+        font-size: 25px;
+    }
+
+    body h3 {
+        font-size: 35px;
+    }
+
+    .one__feedback {
+        max-width: 694px;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .feedback-column {
+        width: calc(50% - 15px);
+        margin-bottom: 100px;
+    }
+
+    .gallery__slides {
+        height: 536px;
+    }
+
+    .gallery__wrapper h2 {
+        font-size: 20px;
+        position: absolute;
+        left: 51px;
+        top: 20px;
+    }
+
+    .box p {
+        width: 350px;
+        font-size: 25px;
+        top: 400px;
+        left: 51px;
+    }
+
+    .gallery__controls_wrapper {
+        top: 310px;
+        left: 30px;
+    }
+
+    .gallery__controls button {
+        font-size: 70px; 
+    }
+    
+    .tele, .email {
+        font-size: 45px;
+        line-height: 60px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    body h2 {
+        font-size: 14px;
+    }
+
+    .container{
+        width: 100%;
+        padding-left: 13px;
+        padding-right: 12px;
+    }
+
+    .header-list{
+        display: none;
+    }
+
+    .header img {
+        width: 96px;
+        height: 16px;
+    }
+
+    .intro-wrapper {
+        height: 304px;
+    }
+
+
+    .intro h1 {
+        width: 100%;
+    
+        font-size: 30px;
+        line-height: 31.65px;
+    }
+
+    .intro-wrapper p {
+        width: 312px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+
+        font-size: 16px;
+    }
+
+    .aboutus p {
+        width: 100%;
+
+        font-size: 22px;
+    }
+
+    .aboutus-button {
+        width: 100%;
+        height: 51px;
+        padding: 15px 30px;
+
+        border-radius: 3.8px;
+
+        font-size: 15px;
+    }
+
+    .project-img {
+        height: 250px;
+    }
+    
+    .project-descr {
+        font-size: 18px;
+    }
+
+    .project-link {
+        width: 101px;
+        font-size: 16px;
+    }
+
+    .project-link:hover {
+        width: 109px;
+    }
+
+    .allprojects {
+        width: 100%;
+        height: 100px;
+
+        border-radius: 3.8px;
+        font-size: 22px;    
+    }
+
+    .services {
+        margin-top: 80px;
+        padding: 80px 0;
+    }
+
+    .services-list {
+        row-gap: 50px;
+    }
+    
+    .service {
+        width: 100%;
+    }
+    
+    .service-cost {
+        height: 30px;
+
+        font-size: 14px;
+    }
+
+    .service img {
+        height: 240px;
+
+        margin-bottom: 10px;
+    }
+    
+    .service-descr {
+        font-size: 18px;
+    }
+
+    .services-btn {
+        margin-top: 80px;
+        height: 100px;
+    
+        font-size: 22px;
+
+        border-radius: 3.8px;
+    }
+
+    .feedback {
+        margin: 80px 0;
+    }
+
+    body h3 {
+        font-size: 25px;
+    }
+
+    .one__feedback {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .feedback-column {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    .gallery__slides {
+        height: 408px;
+    }
+
+    .gallery__wrapper h2 {
+        font-size: 14px;
+        position: absolute;
+        left: 12px;
+    }
+
+    .box p {
+        width: 270px;
+        font-size: 19px;
+        top: 290px;
+        left: 12px;
+    }
+
+    .gallery__controls_wrapper {
+        top: 160px;
+        left: 0;
+    }
+
+    .gallery__controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .gallery__controls button {
+        margin: 0;
+        font-size: 60px; 
+    }
+
+    address {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    .contacts {
+        margin: 80px 0;
+    }
+
+    .icon-box {
+        top: -40px;
+    }
+
+    .tele-img {
+        height: 16.5px;
+        width: 10px;
+    }
+
+    .email-img {
+        height: 12px;
+        width: 15px;
+    }
+
+
+    .tele, .email {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .footer-list {
+        margin: 18px auto;
+        width: 281px;
+        font-size: 12px;
+    }
+
+    .footer p {
+        margin-top: 40px;
+        font-size: 13px;
+    }
 }

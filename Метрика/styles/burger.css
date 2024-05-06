@@ -1,0 +1,138 @@
+.body_fixed {
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+}
+
+.burger-btn {
+    display: none;
+}
+
+.burger {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: end;
+    /* align-items: center; */
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    z-index: 100;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.2s ease;
+}
+
+.burger_open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger__content {
+    width: 80%;
+    height: 100%;
+    background-color: #F5F5F5;
+
+    padding: 80px 30px;
+}
+
+.burger__content img {
+    width: 156px;
+    height: auto;
+
+    margin-bottom: 50px;
+}
+
+.burger-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    margin-bottom: 90px;
+}
+
+.burger-list-link {
+    display: block;
+}
+
+.burger-list-link a {
+    font-size: 25px;
+    color: black;
+}
+
+.burger-list-link a:hover{
+    opacity: 0.5;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.burger-list-link a:active{
+    opacity: 0.3;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.burger__content h2 {
+    font-size: 16px;
+    opacity: 50%;
+
+    margin-bottom: 10px;
+}
+
+.burger__content .burger-contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.burger__content .tele {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.burger__content .email {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+
+@media (max-width: 1149px) {
+    .burger-btn {
+        display: block;
+
+        background-image: url(/img/burger.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top;
+
+        width: 50px;
+        height: 23px;
+
+        position: absolute;
+        right: 15px;
+        z-index: 110;
+    }
+
+    .burger-btn_open {
+        background-image: url(/img/close.png);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: contain;
+    }
+}
+
+@media (max-width: 767px) {
+    .burger-btn {
+        width: 38px;
+        height: 16px;
+    }
+}
